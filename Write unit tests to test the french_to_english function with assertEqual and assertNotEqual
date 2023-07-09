@@ -1,0 +1,17 @@
+import unittest
+
+class TestTranslations(unittest.TestCase):
+    def test_french_to_english(self):
+        french_text = "Bonjour"
+        expected_translation = "Hello"
+        translated_text = translate_french_to_english(french_text)
+        self.assertEqual(translated_text, expected_translation)
+
+    def test_french_to_english_not_equal(self):
+        french_text = "Bonjour"
+        unexpected_translation = "Hi"
+        translated_text = translate_french_to_english(french_text)
+        self.assertNotEqual(translated_text, unexpected_translation)
+
+if __name__ == '__main__':
+    unittest.main()
