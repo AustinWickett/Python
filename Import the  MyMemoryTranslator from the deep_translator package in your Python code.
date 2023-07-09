@@ -1,0 +1,2 @@
+from deep_translator import MyMemoryTranslator
+pip install deep_translator
