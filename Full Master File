@@ -1,0 +1,44 @@
+from deep_translator import MyMemoryTranslator
+import unittest
+
+
+def translate_english_to_french(text):
+    translator = MyMemoryTranslator(source='en', target='fr')
+    translation = translator.translate(text)
+    return translation
+
+
+def translate_french_to_english(text):
+    translator = MyMemoryTranslator(source='fr', target='en')
+    translation = translator.translate(text)
+    return translation
+
+
+class TestTranslations(unittest.TestCase):
+    def test_english_to_french(self):
+        english_text = "Hello"
+        expected_translation = "Bonjour"
+        translated_text = translate_english_to_french(english_text)
+        self.assertEqual(translated_text, expected_translation)
+
+    def test_english_to_french_not_equal(self):
+        english_text = "Hello"
+        unexpected_translation = "Salut"
+        translated_text = translate_english_to_french(english_text)
+        self.assertNotEqual(translated_text, unexpected_translation)
+
+    def test_french_to_english(self):
+        french_text = "Bonjour"
+        expected_translation = "Hello"
+        translated_text = translate_french_to_english(french_text)
+        self.assertEqual(translated_text, expected_translation)
+
+    def test_french_to_english_not_equal(self):
+        french_text = "Bonjour"
+        unexpected_translation = "Hi"
+        translated_text = translate_french_to_english(french_text)
+        self.assertNotEqual(translated_text, unexpected_translation)
+
+
+if __name__ == '__main__':
+    unittest.main()
