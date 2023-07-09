@@ -1,0 +1,9 @@
+
+english_text = "Hello"
+french_text = "Bonjour"
+
+translated_to_french = translate_english_to_french(english_text)
+translated_to_english = translate_french_to_english(french_text)
+
+print(f"English to French: {translated_to_french}")
+print(f"French to English: {translated_to_english}")
