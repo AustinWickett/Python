@@ -6,7 +6,4 @@ def translate_english_to_french(text):
     return translation
 from deep_translator import MyMemoryTranslator
 
-def translate_french_to_english(text):
-    translator = MyMemoryTranslator(source='fr', target='en')
-    translation = translator.translate(text)
-    return translation
+
